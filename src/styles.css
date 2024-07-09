@@ -151,6 +151,14 @@ footer {
     align-items: center;
   }
 
+  main {
+    flex: 1 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   header nav ul li {
     margin: 0.5rem 0;
   }

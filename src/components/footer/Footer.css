@@ -2,9 +2,19 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     text-align: center;
-    width: 97.8%;
+    width: auto;
   }
   
   .footer-content {
     padding: 1rem;
   }
+
+
+  @media (max-width: 500px) {
+    .footer {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        text-align: center;
+      }
+  }
+  
