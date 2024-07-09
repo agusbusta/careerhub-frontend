@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config';
-import '../../styles.css';
-import './Register.css'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -15,6 +13,18 @@ function Register() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const email = searchParams.get('email');
+    if (email) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        email: decodeURIComponent(email)
+      }));
+    }
+  }, [location.search]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,7 +50,7 @@ function Register() {
 
       if (response.status === 201) {
         console.log('Registration successful');
-        navigate('/login');
+        navigate('/login'); // Redirige a la página de inicio de sesión después del registro exitoso
       }
     } catch (err) {
       setError(err.response?.data?.msg || 'An error occurred during registration');

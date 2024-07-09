@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 import config from '../../config';
 import './Login.css'
@@ -34,6 +36,7 @@ function Login() {
   };
 
   return (
+    <> 
     <div className="login-form">
       <h2>Login</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -60,8 +63,14 @@ function Login() {
         </div>
         <button type="submit" className="submit-btn">Login</button>
       </form>
+
     </div>
-  );
+    <div className="join-container">
+      <Link to="/register"><p className="account-link">Join CareerHub today</p></Link>
+
+    </div>
+      </>
+    );
 }
 
 export default Login;
