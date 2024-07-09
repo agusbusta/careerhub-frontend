@@ -29,11 +29,6 @@ function Dashboard() {
     fetchData();
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login'); // Utiliza navigate para redirigir al usuario
-  };
-
   if (error) {
     return <div className="dashboard" style={{ color: 'red' }}>{error}</div>;
   }
@@ -46,7 +41,6 @@ function Dashboard() {
     <div className="dashboard">
       <div className="dashboard-header">
         <h1 className="dashboard-title">Dashboard</h1>
-        <button onClick={handleLogout} className="sign-out-btn">Sign Out</button>
       </div>
       <div className="dashboard-stats">
         <div className="stat-card">

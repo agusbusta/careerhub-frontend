@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../../styles.css';
 import './Header.css';
 import DropDownMenu from '../dropDownMenu/DropDownMenu';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
-
+import picprofile from '../../assets/profilepic.png';
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMenuOpen(false); // Cierra el menú cuando cambia la ubicación
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     console.log("Toggle menu called");
@@ -64,15 +67,13 @@ function Header() {
             <li><Link to="/">Company</Link></li>
           </ul>
         )}
-        {/* Mostrar el botón de login solo si no hay token y no estamos en el dashboard */}
         {!token && !isDashboardPage && (
           <Link to="/login" className="login-button">Log in</Link>
         )}
-        {/* Mostrar el menú desplegable si hay token */}
         {token && (
           <div className="dropdown-container">
-            <button className="profile-button" onClick={toggleMenu}>
-              <img src="/path/to/profile-image.jpg" alt="Profile" className="profile-image" />
+            <button className="profile-button" style={{border: 'none', backgroundColor: 'transparent'}} onClick={toggleMenu}>
+              <img style={{ width: '40px', height: '40px', backgroundColor: 'none'}} src={picprofile} alt="Profile" className="profile-image" />
             </button>
             <DropDownMenu isOpen={isMenuOpen} signOut={handleLogout} onClose={closeMenu} /> {/* Pasa el estado isOpen y la función onClose */}
           </div>
