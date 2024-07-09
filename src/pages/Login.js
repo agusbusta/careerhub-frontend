@@ -29,7 +29,7 @@ function Login() {
       }
     } catch (err) {
       if (err.response && err.response.data) {
-        setError(err.response.data.message || 'An error occurred during login');
+        setError(err.response.data.message || 'An error occurred during the login');
       } else {
         setError('An error occurred during login');
       }
