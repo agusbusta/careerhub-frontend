@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import config from '../config';
-import '../styles.css';
+import config from '../../config';
+import '../../styles.css';
 import './Dashboard.css'
 
 function Dashboard() {
