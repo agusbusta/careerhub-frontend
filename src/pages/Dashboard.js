@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import config from '../config';
 
 function Dashboard() {
   const [userData, setUserData] = useState(null);
@@ -9,7 +10,7 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5001/api/users/me', {
+        const response = await axios.get(`${config.BASE_URL}/api/users/me`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
