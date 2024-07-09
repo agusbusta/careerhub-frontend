@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import config from '../config';
+import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +21,7 @@ function Login() {
       });
 
       if (response.status === 200 && response.data.access_token) {
-        // Guardar el token en localStorage
         localStorage.setItem('token', response.data.access_token);
-        // Redirigir al dashboard
         navigate('/dashboard');
       }
     } catch (err) {
@@ -37,11 +34,11 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="login-form">
       <h2>Login</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -51,7 +48,7 @@ function Login() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -61,7 +58,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-btn">Login</button>
       </form>
     </div>
   );

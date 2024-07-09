@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import config from '../config';
+import '../styles.css';
+import './Register.css'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -23,7 +25,6 @@ function Register() {
     setError('');
     setLoading(true);
 
-    // Basic form validation
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords don't match");
       setLoading(false);
@@ -49,55 +50,24 @@ function Register() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" disabled={loading}>
+    <div className="register-container">
+      <h1 className="register-title">Register</h1>
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleSubmit} className="register-form">
+        {Object.keys(formData).map((key) => (
+          <div key={key} className="form-group">
+            <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}:</label>
+            <input
+              type={key.includes('password') ? 'password' : key === 'email' ? 'email' : 'text'}
+              id={key}
+              name={key}
+              value={formData[key]}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        ))}
+        <button type="submit" disabled={loading} className="submit-btn">
           {loading ? 'Registering...' : 'Register'}
         </button>
       </form>

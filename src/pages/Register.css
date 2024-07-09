@@ -1,0 +1,80 @@
+/* Register.css */
+
+.register-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #4a90e2;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(to right, #4a90e2, #50e3c2);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 480px) {
+    .register-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  }
