@@ -1,48 +1,100 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
 .login-form {
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .login-form h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 2rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #666;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(to right, #4a90e2, #50e3c2);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    opacity: 0.9;
-  }
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 0 auto; /* Asegura que el formulario esté centrado horizontalmente */
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.login-form p {
+  text-align: center;
+  color: #60778a;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.form-group input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #2094f3;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.forgot-password {
+  text-align: center;
+  color: #60778a;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+
+.create-account-btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: #f0f2f5;
+  color: #111518;
+  border: none;
+  border-radius: 15px; /* Ajusta el valor de border-radius para hacer el botón redondo */
+  font-size: 1rem;
+  text-align: center;
+  line-height: 50px; /* Centra verticalmente el texto dentro del botón */
+  margin-top: 1rem;
+  text-decoration: none;
+  overflow: hidden; /* Oculta cualquier desbordamiento de contenido */
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}

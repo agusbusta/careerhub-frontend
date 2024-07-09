@@ -6,7 +6,13 @@
     padding: 2rem;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  h2{
+    justify-content: center;
+    float: center;
+    text-align: center;
   }
   
   .register-title {
@@ -32,11 +38,17 @@
     font-weight: 500;
   }
   
+  .input-style{
+    background-color: rgb(248, 248, 248);
+    border: transparent;
+    outline: transparent;
+  }
   .form-group input {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
+    height: 50px;
     border-radius: 5px;
+    outline: transparent;
+    border: transparent;
     font-size: 1rem;
     transition: border-color 0.3s ease;
   }
@@ -47,7 +59,7 @@
   }
   
   .submit-btn {
-    background: linear-gradient(to right, #4a90e2, #50e3c2);
+    background-color: #4a90e2;
     color: white;
     border: none;
     padding: 0.75rem;

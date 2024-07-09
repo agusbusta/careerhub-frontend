@@ -1,0 +1,41 @@
+.dropdown-menu {
+    position: absolute;
+    top: 7.5%;
+    right: 1.5%;
+    background-color: #eaeaea;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ajusta el z-index según sea necesario */
+    display: none; /* Inicialmente oculto */
+}
+
+.dropdown-menu.open {
+    display: block; /* Mostrar cuando la clase 'open' está presente */
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se alineen verticalmente */
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Agrega un margen cero para asegurar que no haya espacio adicional */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos de la lista se alineen verticalmente */
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    display: block; /* Asegura que los elementos de la lista se muestren como bloques */
+}
+
+.dropdown-menu a {
+    color: #333333;
+    text-decoration: none;
+    display: block; /* Muestra los enlaces como bloques para alinear verticalmente */
+}
+
+.dropdown-menu a:hover {
+    text-decoration: underline;
+}

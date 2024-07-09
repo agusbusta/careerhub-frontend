@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config';
+import './Register.css';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -61,26 +62,67 @@ function Register() {
 
   return (
     <div className="register-container">
-      <h1 className="register-title">Register</h1>
-      {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit} className="register-form">
-        {Object.keys(formData).map((key) => (
-          <div key={key} className="form-group">
-            <label htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}:</label>
+      <div className="register-form">
+        <h2>Create an account</h2>
+        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
             <input
-              type={key.includes('password') ? 'password' : key === 'email' ? 'email' : 'text'}
-              id={key}
-              name={key}
-              value={formData[key]}
+              className='input-style'
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter username"
+              value={formData.username}
               onChange={handleChange}
               required
             />
           </div>
-        ))}
-        <button type="submit" disabled={loading} className="submit-btn">
-          {loading ? 'Registering...' : 'Register'}
-        </button>
-      </form>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              className='input-style'
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              className='input-style'
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              className='input-style'
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit" disabled={loading} className="submit-btn">
+            {loading ? 'Creating your account...' : 'Sign Up'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
