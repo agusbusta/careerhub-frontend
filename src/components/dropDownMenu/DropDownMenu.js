@@ -1,26 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './DropDownMenu.css';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./DropDownMenu.css";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación
+import { useAuth0 } from "@auth0/auth0-react";
 
 const DropDownMenu = ({ isOpen, signOut, onClose }) => {
-    if(isOpen){
-        console.log("llego el is open")
-    }
+  const { loginWithRedirect, logout, user, isLoading } = useAuth0();
+
   return (
-    <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+    <div className={`dropdown-menu ${isOpen ? "open" : ""}`}>
       <div className="dropdown-content">
         <ul>
-          <li><Link to="/my-plan">My Plan</Link></li>
-          <li><Link to="/my-settings">My Settings</Link></li>
-          <li><Link to="/my-profile">My Profile</Link></li>
-          <li><Link to="/login" onClick={signOut}>Sign Out</Link></li>
+          {user && !isLoading && (
+            <p style={{ color: "black" }}>  Hi {user.given_name}</p>
+          )}
 
+          <li>
+            <Link to="/my-plan">My Plan</Link>
+          </li>
+          <li>
+            <Link to="/my-settings">My Settings</Link>
+          </li>
+          <li>
+            <Link to="/myAccount">My Profile</Link>
+          </li>
+          {user && !isLoading && (
+            <button onClick={() => logout()}>Log out</button>
+          )}
         </ul>
       </div>
     </div>
   );
-}
+};
 
 export default DropDownMenu;
