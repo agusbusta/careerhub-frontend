@@ -58,9 +58,6 @@ function Header() {
               <Link to="/">Features</Link>
             </li>
             <li>
-              <Link to="/">Customers</Link>
-            </li>
-            <li>
               <Link to="/">Pricing</Link>
             </li>
             <li>
