@@ -6,7 +6,8 @@ const AUTH0_CLIENT_ID = process.env.REACT_APP_AUTH0_CLIENT_ID
 const config = {
    BASE_URL:  BASE_URL_API,
    DOMAIN_A0: AUTH0_DOMAIN,
-   CLIENT_ID_A0: AUTH0_CLIENT_ID
+   CLIENT_ID_A0: AUTH0_CLIENT_ID,
+   REDIRECT_URI: window.location.origin
 }
 
 export default config
