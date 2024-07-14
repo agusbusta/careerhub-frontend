@@ -8,9 +8,11 @@ import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import PrivateRoute from "./privateRoute";
 import { useAuth0 } from "@auth0/auth0-react";
-import "../src/styles.css";
+import "./styles.css";
 import Auth0ProviderWithHistory from "./components/auth0Provider/Auth0Provider";
 import MyAccount from "./pages/myAccount/MyAccount";
+import AboutUs from "./pages/aboutUs/AboutUs";
+import CVBuilder from "./components/cvbuilder/CvBuilder";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/myAccount" element={<MyAccount />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/create-cv" element={<CVBuilder />} />
               <Route
                 path="/dashboard"
                 element={
@@ -42,13 +46,13 @@ function App() {
 }
 
 const HomeRedirect = () => {
-  const { user, isLoading } = useAuth0();
+  const { user, isLoading, isAuthenticated } = useAuth0();
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  return user ? <Navigate to="/dashboard" /> : <Home />;
+  return isAuthenticated ? <Navigate to="/dashboard" /> : <Home />;
 };
 
 export default App;

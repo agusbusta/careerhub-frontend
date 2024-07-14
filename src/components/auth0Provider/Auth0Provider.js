@@ -16,6 +16,8 @@ const Auth0ProviderWithHistory = ({ children }) => {
       clientId={config.CLIENT_ID_A0}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      useRefreshTokens={true} // Añadido para manejar tokens de refresco
+      cacheLocation="localstorage" // Añadido para persistir en localStorage
     >
       {children}
     </Auth0Provider>

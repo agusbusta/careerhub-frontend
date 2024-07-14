@@ -1,0 +1,158 @@
+.cv-builder {
+    padding: 20px;
+    background-color: #f7f8fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-builder h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+    
+  }
+  
+  .cv-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cv-options input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .cv-options button {
+    padding: 10px 20px;
+    background-color: #0366d6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cv-options button:disabled {
+    background-color: #ccc;
+  }
+  
+  .cv-options button:not(:disabled):hover {
+    background-color: #024ea2;
+  }
+  
+  /* Estilo mejorado para el modal */
+
+  .Modal {
+    display: flex;
+    align-items: flex-start; /* Alinear contenido al inicio del modal */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1400px; /* Ancho máximo del modal */
+    margin: 0 auto; /* Centrar el modal horizontalmente */
+    overflow-y: auto; /* Habilitar scroll vertical cuando el contenido es demasiado largo */
+    max-height: calc(100vh - 40px); 
+    margin-top: 6%;
+    box-shadow: 0 0 50px rgba(128, 0, 128, 0.5);
+    /* Limitar la altura máxima del modal para que no ocupe toda la pantalla */
+  }
+  
+  
+  .Modal h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .Modal .modal-content {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el formulario y la previsualización */
+    width: 100%;
+  }
+  
+  .Modal .form-section {
+    width: 60%; /* Ajustar el ancho del formulario según sea necesario */
+  }
+  
+  .Modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .Modal label {
+    font-size: 16px;
+    color: #666666;
+  }
+  
+  .Modal input,
+  .Modal textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ajustar el ancho según sea necesario */
+  }
+  
+  .Modal .experiences-list {
+    margin-top: 20px;
+  }
+  
+  .Modal .experience {
+    margin-bottom: 20px;
+  }
+  
+  .Modal .experience h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .Modal .experience button {
+    padding: 6px 12px;
+    background-color: #0366d6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .Modal .experience button:hover {
+    background-color: #024ea2;
+  }
+  
+  .Modal .preview-section {
+    width: 35%; /* Ajustar el ancho de la sección de previsualización */
+  }
+  
+  .Modal .preview-section pre {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: auto;
+    white-space: pre-wrap;
+  }
+  
+
+  .or-text {
+    display: block;
+    text-align: center;
+    margin: 10px auto; /* Ajusta el margen según tus necesidades */
+  }
+
+
+
+/* cvBuilder.css */
+
+.logoresume {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+    width: 200px; /* Establece un ancho fijo para la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Da un borde redondeado a la imagen */
+    box-shadow: 0 0 50px rgba(128, 0, 128, 0.5); /* Resplandor violeta con sombra */
+  }
+  

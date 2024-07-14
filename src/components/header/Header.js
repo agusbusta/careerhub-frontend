@@ -7,7 +7,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function Header() {
   const location = useLocation();
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
 
@@ -52,25 +51,7 @@ function Header() {
           </svg>
           CareerHub
         </Link>
-        {isHome || token ? (
-          <ul className="nav-links">
-            <li>
-              <Link to="/">Features</Link>
-            </li>
-            <li>
-              <Link to="/">Pricing</Link>
-            </li>
-            <li>
-              <Link to="/">Resources</Link>
-            </li>
-            <li>
-              <Link to="/">Company</Link>
-            </li>
-          </ul>
-           ) : (
-          <></>
-       
-        )}
+        
         {!user && !isLoading && (
           <button
             className="btn btn-primary btn-block"
